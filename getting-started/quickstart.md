@@ -1,23 +1,17 @@
 # Quickstart
 
-<figure><img src="https://gitbookio.github.io/onboarding-template-images/quickstart-hero.png" alt=""><figcaption></figcaption></figure>
+CN enables you to write special comments in your code – called specifications – that describe what you expect it to do, any assumptions it makes about input, and any assurances it makes  about output.
 
-Beautiful documentation starts with the content you create — and GitBook makes it easy to get started with any pre-existing content.
+&#x20;The CN tools work together to ensure that your code matches its specification.
 
-{% hint style="info" %}
-Want to learn about writing content from scratch? Head to the [Basics](https://github.com/GitbookIO/onboarding-template/blob/main/getting-started/broken-reference/README.md) section to learn more.
-{% endhint %}
+* Runtime testing – `cn test`.  CN produces an instrumented debug build of your code that translates your specifications to runtime assertions that test if the specs hold for that specific execution.  This works with existing unit and integration tests and is the easiest way to get started.
+* Property-based testing – `cn testgen` .  Runtime testing is limited to the test input you've created in your test suite.  CN property-based testing tool automatically generates new input for unit tests.  It works with CN's runtime testing to increase the chances that your tests find bugs.
+* Verification – `cn verify` .  In many cases, CN can automatically verify that your specifications hold for all possible inputs without ever running the code.  CN uses an SMT solver to prove that your specs hold – when it works, it provides a very high degree of assurance.  But not all specs can be proved automatically.  CN provides a debugger for investigating when automated verification fails and how to fix it.
 
-### Import
+Next, you'll learn how to install CN's runtime testing, property-based testing, and verification tools, along with a VSCode plugin for writing CN specifications.
 
-GitBook supports importing content from many popular writing tools and formats. If your content already exists, you can upload a file or group of files to be imported.
+## Installation&#x20;
 
-<div data-full-width="false">
+See [Installing CN](https://rems-project.github.io/cn-tutorial/#\_installing\_cn) for installing the runtime testing, property-based testing, and verification tools.
 
-<figure><img src="https://gitbookio.github.io/onboarding-template-images/quickstart-import.png" alt=""><figcaption></figcaption></figure>
-
-</div>
-
-### Sync a repository
-
-GitBook also allows you to set up a bi-directional sync with an existing repository on GitHub or GitLab. Setting up Git Sync allows you and your team to write content in GitBook or in code, and never have to worry about your content becoming out of sync.
+Install the [language server](https://github.com/GaloisInc/VERSE-Toolchain/tree/main/cn-lsp/server) and [VSCode plugin](https://github.com/GaloisInc/VERSE-Toolchain/tree/main/cn-lsp/client) for a better IDE experience.
