@@ -25,3 +25,7 @@
   * [Operations](language-reference/expressions/operations.md)
   * [Special Constants](language-reference/expressions/special-constants.md)
 * [Auxiliary Definitions](language-reference/auxiliary-definitions.md)
+
+## Help
+
+* [Common Verification Problems](help/common-verification-problems.md)
