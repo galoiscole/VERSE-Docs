@@ -6,6 +6,7 @@
 
 * [What is CN?](getting-started/what-is-cn.md)
 * [Installation](getting-started/quickstart.md)
+* [Hello World](getting-started/hello-world.md)
 
 ## Basics
 
