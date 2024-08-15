@@ -4,11 +4,11 @@ Function specifications define a contract for your C functions, capturing assump
 
 Function specs are placed between the function header and body.
 
-```
+```c
 int f(int *p)
-/@*
+/*@
     // Function spec goes here.
-*@/
+@*/
 {
     return *p;
 }
@@ -29,7 +29,7 @@ These are the bread-and-butter clauses of function specifications.  Together, th
 
 These clauses contain lists of [conditions.md](../conditions.md "mention").  Here's an example.
 
-```
+```c
 int f(int *p)
 /*@
   requires
@@ -43,7 +43,7 @@ int f(int *p)
 
     // The value returned by this function is equal to the contents of p.
     return == v;
-*@/
+@*/
 {
     return *p;
 }
@@ -55,7 +55,7 @@ The `accesses` clause is syntactic sugar for requiring ownership of global varia
 
 In other words, the following function specifications are equivalent.
 
-```
+```c
 int glob = 0;
 
 int f1()
@@ -73,7 +73,7 @@ int f2()
 
   ensures
     take glob_out = Owned<int>(&glob);
-*@/
+@*/
 {
     return glob;
 }
@@ -97,7 +97,7 @@ CN relies on having access to source code, but that's not always possible.  Thir
 
 Here's an example.
 
-```
+```c
 // Returns the value pointed to by p.
 int library_function(int *p);
 /*@
@@ -117,7 +117,7 @@ int inc(int *p)
   ensures
     take p_out = Owned(p);
     return == p_in + 1;
-*@/
+@*/
 {
     return library_function(p) + 1;
 }
@@ -133,7 +133,7 @@ In order to prove that `inc` returns the right value, along with ownership of `p
 
 Here's an example of where using the `trusted` keyword can go wrong.  Consider the following function and trusted specification.
 
-```
+```c
 int whoops(int *p)
 /*@
   trusted;
@@ -144,7 +144,7 @@ int whoops(int *p)
   ensures
     take p_out = Owned(p);
     return == p_out;
-*@/
+@*/
 {
     int x = *p;
     free(p);

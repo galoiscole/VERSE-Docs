@@ -24,4 +24,5 @@
 * [Expressions](language-reference/expressions/README.md)
   * [Basic](language-reference/expressions/basic.md)
   * [Operations](language-reference/expressions/operations.md)
+  * [Special Constants](language-reference/expressions/special-constants.md)
 * [Auxiliary Definitions](language-reference/auxiliary-definitions.md)
