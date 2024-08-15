@@ -18,7 +18,6 @@
 * [Specifications](language-reference/specifications/README.md)
   * [Function Specifications](language-reference/specifications/function-specifications.md)
   * [Loop Invariants](language-reference/specifications/loop-invariants.md)
-  * [Assertions](language-reference/specifications/assertions.md)
 * [Types](language-reference/types.md)
 * [Conditions](language-reference/conditions.md)
 * [Expressions](language-reference/expressions/README.md)

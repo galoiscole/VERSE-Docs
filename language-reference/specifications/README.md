@@ -13,7 +13,7 @@ CN specifications are written in special C comments.
 ```
 {% endhint %}
 
-Specifications can be inserted at four locations in C files.
+Specifications can be inserted in a few locations in C files.
 
 ## Function specifications
 
@@ -29,14 +29,6 @@ Loops are notoriously difficult to verify completely automatically.  In many cas
 
 {% content-ref url="loop-invariants.md" %}
 [loop-invariants.md](loop-invariants.md)
-{% endcontent-ref %}
-
-## Assertions
-
-Similar to C assertions, CN allows you to insert specification conditions at any point in the bodies of your C functions to check that what you expect to be true at that point is actually true.
-
-{% content-ref url="assertions.md" %}
-[assertions.md](assertions.md)
 {% endcontent-ref %}
 
 ## Auxiliary Definitions
