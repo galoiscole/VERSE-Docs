@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/verse-cover.jpeg
+cover: .gitbook/assets/cn-cover.jpeg
 coverY: 0
 layout:
   cover:
