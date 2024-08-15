@@ -18,7 +18,6 @@
 * [Specifications](language-reference/specifications/README.md)
   * [Function Specifications](language-reference/specifications/function-specifications.md)
   * [Loop Invariants](language-reference/specifications/loop-invariants.md)
-* [Types](language-reference/types.md)
 * [Conditions](language-reference/conditions.md)
 * [Expressions](language-reference/expressions/README.md)
   * [Basic](language-reference/expressions/basic.md)
@@ -30,8 +29,10 @@
   * [Data Structures](language-reference/auxiliary-definitions/data-structures.md)
   * [Logical Functions](language-reference/auxiliary-definitions/logical-functions.md)
   * [Custom Resource Predicates](language-reference/auxiliary-definitions/custom-resource-predicates.md)
+* [Types](language-reference/types.md)
 * [Scoping](language-reference/scoping.md)
 * [Tactics (Proof Hints)](language-reference/tactics-proof-hints.md)
+* [Interactive Theorem Proving](language-reference/interactive-theorem-proving.md)
 
 ## Help
 
