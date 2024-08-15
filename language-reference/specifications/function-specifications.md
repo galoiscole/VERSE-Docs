@@ -124,7 +124,7 @@ int inc(int *p)
 ```
 
 {% hint style="info" %}
-This example uses the `spec` keyword and the `pointer` type.  See [auxiliary-definitions.md](../auxiliary-definitions.md "mention") and [types.md](../types.md "mention") for more details.
+This example uses the `spec` keyword and the `pointer` type.  See [auxiliary-definitions](../auxiliary-definitions/ "mention") and [types.md](../types.md "mention") for more details.
 {% endhint %}
 
 In order to prove that `inc` returns the right value, along with ownership of `p`, CN needs to know that `library_function` returns the value of `*p` as well as ownership of `p`.

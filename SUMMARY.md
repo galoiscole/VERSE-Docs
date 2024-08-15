@@ -24,7 +24,14 @@
   * [Basic](language-reference/expressions/basic.md)
   * [Operations](language-reference/expressions/operations.md)
   * [Special Constants](language-reference/expressions/special-constants.md)
-* [Auxiliary Definitions](language-reference/auxiliary-definitions.md)
+  * [Built-in Data Structures](language-reference/expressions/built-in-data-structures.md)
+* [Resource Predicates](language-reference/resource-predicates.md)
+* [Auxiliary Definitions](language-reference/auxiliary-definitions/README.md)
+  * [Data Structures](language-reference/auxiliary-definitions/data-structures.md)
+  * [Logical Functions](language-reference/auxiliary-definitions/logical-functions.md)
+  * [Custom Resource Predicates](language-reference/auxiliary-definitions/custom-resource-predicates.md)
+* [Scoping](language-reference/scoping.md)
+* [Tactics (Proof Hints)](language-reference/tactics-proof-hints.md)
 
 ## Help
 
