@@ -91,11 +91,49 @@ TODO: Explain how to use runtime specification testing to validate trusted specs
 
 Here are a few examples of how to use (and not use) the `trusted` keyword.
 
-```
-// TODO: how to write trusted specs for library functions.
-int library_function(*p);
+### Library Functions
 
-// Bad – the function does not match the spec. 
+CN relies on having access to source code, but that's not always possible.  Third-party libraries, for example, are often distributed as binaries and header files.  In order for CN to verify code that calls such library functions, it's often necessary to tell CN what effect the function has that your code relies on – such as the memory it touches, and sometimes the values it returns.
+
+Here's an example.
+
+```
+// Returns the value pointed to by p.
+int library_function(int *p);
+/*@
+  spec library_function(pointer p);
+  requires
+    take p_in = Owned(p);
+  ensures
+    take p_out = Owned(p);
+    return == p_out;
+@*/
+
+int inc(int *p)
+/*@
+  requires
+    take p_in = Owned(p);
+
+  ensures
+    take p_out = Owned(p);
+    return == p_in + 1;
+*@/
+{
+    return library_function(p) + 1;
+}
+```
+
+{% hint style="info" %}
+This example uses the `spec` keyword and the `pointer` type.  See [auxiliary-definitions.md](../auxiliary-definitions.md "mention") and [types.md](../types.md "mention") for more details.
+{% endhint %}
+
+In order to prove that `inc` returns the right value, along with ownership of `p`, CN needs to know that `library_function` returns the value of `*p` as well as ownership of `p`.
+
+### The Consequences of Misplaced Trust
+
+Here's an example of where using the `trusted` keyword can go wrong.  Consider the following function and trusted specification.
+
+```
 int whoops(int *p)
 /*@
   trusted;
@@ -113,3 +151,11 @@ int whoops(int *p)
     return x + 1;
 }
 ```
+
+See the problem?
+
+The spec claims that it returns ownership of `p` to the caller, but in reality it frees the memory instead.  If the caller uses `p`, it will result in undefined behavior.  Similarly, the spec claims that the return value is `*p`, but really it's a different value – `*p + 1`.
+
+This mismatch can lead to bugs.  Worse, because CN is instructed to trust this spec, it will happily use it to verify the caller and report that the caller is verified to be correct.
+
+In summary, use caution when using the `trusted` keyword.
