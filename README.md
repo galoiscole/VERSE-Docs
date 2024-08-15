@@ -19,7 +19,9 @@ layout:
 
 # Welcome
 
-Welcome to CN! Here you'll get an overview of all the amazing features the CN toolchain offers to help you build safe, reliable, high-assurance C applications.
+Welcome to CN! Here you'll get an overview of all the features the CN toolchain offers to help you build safe, reliable, high-assurance C applications.
+
+[CN is an open-source project](https://github.com/rems-project/cerberus/tree/master/backend/cn), hosted on GitHub as part of the [Cerberus project](https://github.com/rems-project/cerberus).
 
 ### Jump right in
 
